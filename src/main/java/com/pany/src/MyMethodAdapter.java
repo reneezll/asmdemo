@@ -1,4 +1,4 @@
-package zt.asm;
+package com.pany.src;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Attribute;
@@ -10,8 +10,8 @@ public class MyMethodAdapter extends AdviceAdapter {
     private String name;
     private boolean trace;
 
-    protected MyMethodAdapter(MethodVisitor mv, int access, String name, String desc) {
-        super(mv, access, name, desc);
+    protected MyMethodAdapter(int api, MethodVisitor mv, int access, String name, String desc) {
+        super(api, mv, access, name, desc);
         this.name = name;
         this.mv = mv;
     }
@@ -19,7 +19,7 @@ public class MyMethodAdapter extends AdviceAdapter {
 
     @Override
     public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
-        if(desc.equalsIgnoreCase("Lzt/asm/Trace;") && visible){
+        if(desc.equalsIgnoreCase("Lcom/pany/src/Trace;") && visible){
             this.trace = true;
         }
 

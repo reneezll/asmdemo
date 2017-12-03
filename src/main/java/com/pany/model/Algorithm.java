@@ -1,6 +1,4 @@
-package zt.asm.model;
-
-import zt.asm.Trace;
+package com.pany.model;
 
 public class Algorithm {
 
@@ -37,6 +35,4 @@ public class Algorithm {
     i++;
     System.out.println("i = " + i);
   }
-
-
 }
